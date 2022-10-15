@@ -1,6 +1,6 @@
 ####问题####
-由于在Hub1_BGP模板的VPN3 --- Route-Map Out方向no-export不生效,
-导致Branch1, Branch2学到彼此身后的路由传递到MPLS_PE
+由于在Hub1_BGP模板的VPN3 --- Route-Map Out方向no-export不生效,导致Branch1, Branch2学到彼此身后的路由传递到MPLS_PE
+
 可以干掉Hub1_BGP模板的VPN3 --- Route-Map Out方向no-export,然后再Branch1和Branch2的Route-Map In方向set no-export
 
 
