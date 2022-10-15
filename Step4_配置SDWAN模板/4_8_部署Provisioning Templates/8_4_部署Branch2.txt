@@ -6,12 +6,12 @@
 Policy Package --- Branch2_FW_Policy --- Firewall Policy --- Create New
 
 Name: internet-traffic
-Incomming Interface: lan
+Incoming Interface: lan
 Outgoing Interface: internet
 Action: Accept
 NAT: 勾
      NAT
-IP Pool Configuration: internet traffic
+IP Pool Configuration: Use Outgoing Interface Address
 
 点击: OK
 
