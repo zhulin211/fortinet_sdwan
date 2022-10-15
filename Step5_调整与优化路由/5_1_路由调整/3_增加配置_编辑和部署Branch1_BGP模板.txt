@@ -26,7 +26,6 @@ C>* 172.16.30.0/24 is directly connected, eth4
 C>* 172.16.100.0/24 is directly connected, eth0
 
 
-
 Branch1 # get router info bgp network 10.1.2.0/24
 VRF 0 BGP routing table entry for 10.1.2.0/24
 Paths: (1 available, best #1, table Default-IP-Routing-Table)
@@ -41,7 +40,6 @@ Paths: (1 available, best #1, table Default-IP-Routing-Table)
       Receive Path ID: 3
       Advertised Path ID: 1
        Last update: Sat Oct 15 20:56:11 2022
-
 
 
 
