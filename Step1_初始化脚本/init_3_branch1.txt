@@ -1,0 +1,36 @@
+config system interface
+    edit "port1"
+        set mode static
+        set allowaccess ping https ssh http fgfm
+        set ip 172.16.10.1 255.255.255.0
+next
+    edit "port2"
+        set mode static
+        set allowaccess ping
+        set allowaccess ping https ssh http fgfm
+        set ip 10.1.1.254 255.255.255.0
+end
+
+config router static
+    edit 1
+        set dst 0.0.0.0 0.0.0.0
+        set gateway 172.16.10.254
+        set device "port1"
+next
+    edit 2
+        set dst 172.16.0.0 255.255.0.0
+        set gateway 172.16.10.254
+        set device "port1"
+next
+
+end
+
+config system global
+    set admintimeout 480
+    set hostname "Branch1"
+    set timezone 55
+    set language english
+end
+
+execute ping 172.16.10.254
+

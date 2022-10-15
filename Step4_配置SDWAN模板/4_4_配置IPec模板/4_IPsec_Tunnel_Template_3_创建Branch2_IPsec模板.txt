@@ -1,0 +1,21 @@
+=================================================================================
+Device Manager --- Provisioning Templates --- IPsec Tunnel Templates
+
+=================================================================================
+H2S_BRANCH_IPsec --- More --- Clone  --- 改名为: Branch2_IPsec
+
+=================================================================================
+Branch1_IPsec --- Edit
+                     HUB1_VPN1 --- Edit
+                                      Remote Gateway (IP Address): 202.100.11.1
+
+                     HUB1_VPN2 --- Edit
+                                      Remote Gateway (IP Address): 202.100.12.1
+
+                     HUB1_VPN3 --- Edit
+                                       Remote Gateway (IP Address): 172.16.100.1
+
+=================================================================================
+ok
+
+

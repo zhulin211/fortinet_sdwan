@@ -1,0 +1,44 @@
+如果出现配置正确(反复确认), 但是路由出现问题的情况
+
+如下故障案例:
+
+Branch2 # get router info routing-table all
+Codes: K - kernel, C - connected, S - static, R - RIP, B - BGP
+       O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       V - BGP VPNv4
+       * - candidate default
+
+Routing table for VRF=0
+S*      0.0.0.0/0 [10/0] via 202.100.20.254, port1, [1/0]
+B       10.1.0.0/16 [200/0] via 192.168.63.253 (recursive via HUB1-VPN1 tunnel 202.100.11.1), 00:04:08, [1/0]
+                    [200/0] via 192.168.127.253 (recursive via HUB1-VPN2 tunnel 202.100.12.1), 00:04:08, [1/0]
+                    [200/0] via 192.168.191.253 (recursive via HUB1-VPN3 tunnel 172.16.100.1), 00:04:08, [1/0]
+B       10.1.1.0/24 [200/0] via 192.168.128.2 (recursive is directly connected, HUB1-VPN1_0), 00:04:08 ~~~ 始终有这个错误的路由~~~~
+                                              (recursive is directly connected, HUB1-VPN3_0), 00:04:08, [1/0]
+C       10.1.2.0/24 is directly connected, port3
+B       10.1.3.0/24 [200/0] via 192.168.0.2 [2] (recursive is directly connected, HUB1-VPN1), 00:04:09, [1/0]
+                    [200/0] via 192.168.64.2 [2] (recursive is directly connected, HUB1-VPN1_1), 00:04:09, [1/0]
+B       10.1.4.0/24 [200/0] via 192.168.0.1 [2] (recursive is directly connected, HUB1-VPN1), 00:04:09, [1/0]
+                    [200/0] via 192.168.64.1 [2] (recursive is directly connected, HUB1-VPN2), 00:04:09, [1/0]
+B       10.1.5.0/24 [200/0] via 192.168.63.253 [2] (recursive via HUB1-VPN1 tunnel 202.100.11.1), 00:04:08, [1/0]
+                    [200/0] via 192.168.127.253 [2] (recursive via HUB1-VPN2 tunnel 202.100.12.1), 00:04:08, [1/0]
+                    [200/0] via 192.168.191.253 [2] (recursive via HUB1-VPN3 tunnel 172.16.100.1), 00:04:08, [1/0]
+B       10.1.6.0/24 [200/0] via 192.168.63.253 (recursive via HUB1-VPN1 tunnel 202.100.11.1), 00:04:08, [1/0]
+                    [200/0] via 192.168.127.253 (recursive via HUB1-VPN2 tunnel 202.100.12.1), 00:04:08, [1/0]
+                    [200/0] via 192.168.191.253 (recursive via HUB1-VPN3 tunnel 172.16.100.1), 00:04:08, [1/0]
+B       10.1.30.0/24 [20/0] via 172.16.20.254 (recursive is directly connected, port2), 00:04:31, [1/0]
+C       10.1.100.2/32 is directly connected, Branch2-Lo
+S       172.16.0.0/16 [10/0] via 172.16.20.254, port2, [1/0]
+C       172.16.20.0/24 is directly connected, port2
+C       192.168.0.0/18 is directly connected, HUB1-VPN1
+C       192.168.0.3/32 is directly connected, HUB1-VPN1
+
+===================================================================
+登录到Branch2的FortiGate管理页面
+
+VPN --- IPSec Tunnels ---- 找到有故障的隧道(右键) ---- Bring Down --- Entries Tunnel
+
+然后在全部清除一下路由"exec router clear bgp all"

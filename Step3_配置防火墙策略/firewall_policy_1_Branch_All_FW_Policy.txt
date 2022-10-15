@@ -1,0 +1,61 @@
+====================================================================
+Policy & Objects --- Policy Package[最顶上那一排, 蓝色底] --- New
+
+====================================================================
+Create New Policy Package
+Name: Branch1_FW_Policy
+Central NAT: Disable
+NGFW Mode: Profile-based
+Policy Offload Level: Disable
+
+点击: OK
+
+====================================================================
+Policy Package --- Branch1_FW_Policy --- Firewall Policy --- Create New
+
+Name: permit-all
+Action: Accept
+Change Note: qytang branch permit all
+
+点击: OK
+
+====================================================================
+选择Branch1_FW_Policy --- Policy Package --- Clone
+
+产生 Branch2_FW_Policy, Branch3_FW_Policy, Branch4_FW_Policy
+
+====================================================================
+Policy Package --- BranchX_FW_Policy --- Installation Targets --- Edit
+
+双击把 BranchX 放入右边的 Selected Entries
+
+点击: OK
+
+====================================================================
+Install Wizard[最顶上那一排, 蓝色底]
+
+Install Wizard:
+    Install Policy Package & Device Settings:
+        Policy Package: BranchX_FW_Policy
+
+点击: Next
+
+====================================================================
+出现已经被选择的BranchX
+
+点击: Next
+
+====================================================================
+Installation Preparation Total:2/2, Success:2
+ 勾 Interface Validation
+ 勾 Policy and Object Validation
+ 勾 Ready to Install.
+
+点击: Install
+
+====================================================================
+勾 Policy package (BranchX_FW_Policy) is installed successfully.
+
+Total: 1/1, Success: 1
+
+点击: Finish

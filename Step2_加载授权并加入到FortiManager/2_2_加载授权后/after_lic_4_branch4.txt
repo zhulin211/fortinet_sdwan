@@ -1,0 +1,6 @@
+config log setting
+    set local-in-allow enable
+    set local-in-deny-unicast enable
+    set local-in-deny-broadcast enable
+    set local-out enable
+end

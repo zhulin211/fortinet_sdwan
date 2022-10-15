@@ -1,0 +1,39 @@
+====================================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Create New
+
+====================================================================================
+Create New SD-WAN Template
+
+Name: Branch1_SDWAN
+
+SD-WAN Status: enable
+
+Interface Members:
+            Create New: --- SD-WAN Zone
+            添加如下三个Zone:
+
+                  name: overlay
+                  name: mpls
+                  name: lan
+
+            Create New: --- SD-WAN Member
+            为Zone添加成员接口:
+
+            Sequence Number:     1
+            Interface Member:    $(mpls_port)
+            SD-WAN Zone:         mpls
+            Gateway IP:          $(mpls_gw)
+
+            Sequence Number:     2
+            Interface Member:    $(lan)
+            SD-WAN Zone:         lan
+            Gateway IP:          0.0.0.0
+
+            Sequence Number:     3
+            Interface Member:    HUB1-VPN3    [具体的名称可以在 IPSec Tunnel Templates --- H2S_BRANCH_IPsec]
+            SD-WAN Zone:         overlay
+            Gateway IP:          0.0.0.0
+
+
+====================================================================================
+ok

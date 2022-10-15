@@ -1,0 +1,33 @@
+Device Manager --- Provisioning Templates --- IPSec Tunnel Templates --- Branch3_IPsec --- HUB1_VPN1 -- Edit
+
+Advanced Options:
+
+fec-egress: enable
+fec-ingress: enable
+
+fec-base: 20
+fec-redundant: 2
+fec-send-timeout: 8
+
+[官方解释]
+then FortiGate sends two parity packets over HUB1_VPN1 for every 20 packets sent through the tunnel over a period of eight milliseconds.
+===========================================================================================
+
+Device Manager --- Provisioning Templates --- IPSec Tunnel Templates --- Branch3_IPsec --- HUB1_VPN2 -- Edit
+
+Advanced Options:
+
+fec-egress: enable
+fec-ingress: enable
+
+fec-base: 20
+fec-redundant: 2
+fec-send-timeout: 8
+
+===========================================================================================
+
+Policy & Objects --- Policy Package --- Branch3_FW_Policy --- Firewall Policy --- permit-all --- Edit
+
+Advanced Options:
+
+fec: enable

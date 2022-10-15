@@ -1,0 +1,23 @@
+=================================================================================
+Device Manager --- Provisioning Templates --- System Templates --- Create New --- Default Template
+
+=================================================================================
+Name: All_Device_System
+
+<OK>
+=================================================================================
+Admin Settings:
+
+Idle Timeout (1 - 480 mins): 480
+
+Apply [每一个都要Apply]
+--------------------------------------------------------------------------------
+Logging Settings [位于最右下角]
+ Send Logs to FortiAnalyzer/FortiManager (勾选)
+  This FortiManager (勾选)
+   Upload Option:   Real-time
+ Reliable Logging to FortiAnalyzer --- enable
+
+Apply [每一个都要Apply]
+=================================================================================
+

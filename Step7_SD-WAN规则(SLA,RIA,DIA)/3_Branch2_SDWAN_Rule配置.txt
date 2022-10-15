@@ -1,0 +1,71 @@
+Device Manager --- Provisioning Templates --- SD-WAN Templates Branch2_SDWAN --- Edit
+
+===========================配置SD-WAN Rule===========================================================================================================================
+SD-WAN Rules ---
+            Create New
+                          Name:         RIA_SSH
+                          IP Version:   IPv4
+                          Source:
+                               Source Address ---- Click to select --- +(Create New) --- Firewall Address
+                                                                                                        Name:           sdwan_overlay
+                                                                                                        IP/Netmask:     10.1.0.0/255.255.0.0
+                                                                                                        Change Note:    a
+                          Destination:
+                                    Source Address ---- Click to select --- all --- ok
+                                    Protocol:       TCP
+                                    Port Range:     22 - 22
+
+                          Outgoing Interfaces:
+                                     Strategy:                  Best Quality
+                                     Interface Preference:      + (选择)
+                                                                HUB1-VPN1
+                                                                HUB1-VPN2
+                                                                HUB1-VPN3
+
+                                     Measured SLA:              HUB1-HC
+                                     Quality Criteria:          Latency
+
+                          Advanced Options: [如下两个选项会忽略路由表, 强行做策略路由]
+                                     default --- enable
+                                     gateway --- enable
+[官方解释]
+enabling the default setting in an SD-WAN rule. This instructs FortiGate to skip the best route check.
+You can also change the behavior described in 2 by enabling the gateway setting in an SD-WAN rule.
+This instructs FortiGate to skip the FIB lookup
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+            Create New
+                          Name:         RIA_Telnet
+                          IP Version:   IPv4
+                          Source:
+                               Source Address ---- Click to select --- sdwan_overlay --- ok
+
+                          Destination:
+                                    Source Address ---- Click to select --- all --- ok
+                                    Protocol:       TCP
+                                    Port Range:     23 - 23
+
+                          Outgoing Interfaces:
+                                     Strategy:                  Lowest Cost(SLA)
+                                     Interface Preference:      + (选择)
+                                                                HUB1-VPN1
+                                                                HUB1-VPN2
+                                                                HUB1-VPN3
+
+                                     Required SLA Target: ---  + (选择) --- HUB1-HC#1
+
+
+                          Advanced Options: [如下两个选项会忽略路由表, 强行做策略路由]
+                                     default --- enable
+                                     gateway --- enable
+
+======================================================================================================================================================
+
+Branch4 (勾选) --- Install --- Install Wizard ---
+                          Install Policy Package & Device Settings (勾选)
+                                                   Policy Package: Branch4_FW_Policy
+                                                                   --- Next
+                                                                   --- Next
+                                                                   --- Install
+
+
+

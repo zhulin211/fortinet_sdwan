@@ -1,0 +1,59 @@
+====================================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Create New
+
+====================================================================================
+Create New SD-WAN Template
+
+Name: Hub1_SDWAN
+
+SD-WAN Status: enable
+
+Interface Members:
+            Create New: --- SD-WAN Zone
+            添加如下四个Zone:
+
+                  name: internet
+                  name: overlay
+                  name: mpls
+                  name: lan
+
+            Create New: --- SD-WAN Member
+            为Zone添加成员接口:
+
+            Sequence Number:     1
+            Interface Member:    $(internet_p1)
+            SD-WAN Zone:         internet
+            Gateway IP:          $(internet_p1_gw)
+
+            Sequence Number:     2
+            Interface Member:    $(internet_p2)
+            SD-WAN Zone:         internet
+            Gateway IP:          $(internet_p2_gw)
+
+            Sequence Number:     3
+            Interface Member:    $(mpls_port)
+            SD-WAN Zone:         mpls
+            Gateway IP:          0.0.0.0
+
+            Sequence Number:     4
+            Interface Member:    $(lan)
+            SD-WAN Zone:         lan
+            Gateway IP:          0.0.0.0
+
+            Sequence Number:     5
+            Interface Member:    VPN1    [具体的名称可以在 IPSec Tunnel Templates --- H2S_HUB1_IPsec]
+            SD-WAN Zone:         overlay
+            Gateway IP:          0.0.0.0
+
+            Sequence Number:     6
+            Interface Member:    VPN2    [具体的名称可以在 IPSec Tunnel Templates --- H2S_HUB1_IPsec]
+            SD-WAN Zone:         overlay
+            Gateway IP:          0.0.0.0
+
+            Sequence Number:     7
+            Interface Member:    VPN3    [具体的名称可以在 IPSec Tunnel Templates --- H2S_HUB1_IPsec]
+            SD-WAN Zone:         overlay
+            Gateway IP:          0.0.0.0
+
+====================================================================================
+ok

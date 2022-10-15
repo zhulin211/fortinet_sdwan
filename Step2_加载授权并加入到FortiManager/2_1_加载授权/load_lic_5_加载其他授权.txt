@@ -1,0 +1,4 @@
+---------------------加载FortiGate授权---------------------
+通过HTTP访问并加载授权: Branch1, Branch2, Branch3, Branch4, FortiManager的授权
+
+授权文件位置: C:\Users\Administrator\Desktop\Fortinet-SDWAN-License\FG-Lic（20220921-20221120）\

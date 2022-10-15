@@ -1,0 +1,40 @@
+---------------------把FortiGate加入FortiManager---------------------
+
+逐个加入FortiGate: DC1, Branch1, Branch2, Branch3, Branch4
+
+====================================================================
+Security Fabric --- Fabric Connectors --- Other Fortinet Products --- FortiManager(红色) --- 右键Edit
+
+====================================================================
+FortiManager Settings:
+
+Status: Enabled
+Type: On-Premises
+Mode: Normal
+IP/Domain name: 202.100.100.1
+
+点击: OK
+
+====================================================================
+右边弹出"Confirm"提示页面, 提示内容如下:
+Waiting for management confirmation from FortiManager administrator. Once confirmed full control of this FortiGate will be granted to FMG-VMTM22012553 at 202.100.100.1.
+
+点击: OK
+
+====================================================================
+右边弹出"FortiManager Status"提示页面, 提示内容如下:
+This FortiGate is not authorized on FortiManager. Click the "Authorize" button below to review the approval status on FortiManager.
+
+点击: Authorize
+
+====================================================================
+在弹出的Fortinet Security Fabric界面输入
+用户名:admin
+密码: Cisc0123
+
+点击: Login
+
+====================================================================
+<设备名>    202.100.20.1    批准(点击), 然后点击"OK"
+
+

@@ -1,0 +1,47 @@
+=================================================================================
+Device Manager --- Provisioning Templates --- BGP Template
+
+=================================================================================
+H2S_HUB1_BGP --- More --- Clone
+
+=================================================================================
+改名为: Hub1_BGP
+
+Neighbor Group
+
+VPN1 --- Edit
+         Interface: VPN1
+
+VPN2 --- Edit
+         Interface: VPN2
+
+VPN3 --- Edit
+         Interface: VPN3
+
+Neighbors --- Create New
+              IP:         172.16.100.254
+              Remote AS:  254
+              interface:  port3
+              Capability: Default Originate  [勾选] < 不是最后面的那个, 位于IPv4 Filtering段落>
+
+              <OK>
+
+              IP:         10.1.16.1
+              Remote AS:  6
+              interface:  port4
+              Capability: Default Originate  [勾选] < 不是最后面的那个, 位于IPv4 Filtering段落>
+
+              <OK>
+
+Networks --- IP/Netmask
+             192.168.0.0/255.255.192.0   --- 删除
+             192.168.64.0/255.255.192.0  --- 删除
+             192.168.128.0/255.255.192.0 --- 删除
+
+
+Best Path Selection[展开] --- EBGP multi path --- enable (激活)    #### Branch5的EBGP
+
+=================================================================================
+<OK>
+
+

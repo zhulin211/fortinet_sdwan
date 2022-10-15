@@ -1,0 +1,9 @@
+Device Manager --- Managed FortiGate
+
+
+Device Name         Config Status       IP Address      Platform
+Branch1             Synchronized        202.100.20.1    FortiGate-VM64
+Branch2             Synchronized        202.100.20.1    FortiGate-VM64
+Branch3             Synchronized        202.100.30.1    FortiGate-VM64
+Branch4             Synchronized        202.100.41.1    FortiGate-VM64
+DC1                 Synchronized        202.100.11.1    FortiGate-VM64

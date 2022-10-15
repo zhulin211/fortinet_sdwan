@@ -1,0 +1,29 @@
+=================================================================================
+Device Manager --- Provisioning Templates --- Template Groups
+
+=================================================================================
+H2S_HUB1 --- Assign to Devices/Groups
+                                    Selected Entries --- DC1(勾选) --- < (Remove)
+
+ok
+=================================================================================
+H2S_HUB1 --- More --- Clone  --- 改名为: Hub1_Templates
+
+Provisioning Templates --- [Click here to edit]
+
+System Template:       All_Device_System
+IPsec Tunnel Template: Hub1_IPsec
+BGP Template:          Hub1_BGP
+SD-WAN Template:       Hub1_SDWAN
+CLI Template Group:    H2S_HUB1_CLIGRP [保持默认]
+
+ok
+=================================================================================
+Hub1_Templates --- Assign to Devices/Groups
+                                          Available Entries --- DC1(勾选) --- > (Select)
+
+ok
+=================================================================================
+
+
+

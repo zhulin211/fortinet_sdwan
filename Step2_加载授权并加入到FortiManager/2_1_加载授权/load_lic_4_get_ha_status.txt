@@ -1,0 +1,38 @@
+DC1 # get system ha status
+HA Health Status: OK
+Model: FortiGate-VM64
+Mode: HA A-P
+Group: 0
+Debug: 0
+Cluster Uptime: 0 days 0:25:20
+Cluster state change time: 2022-09-28 15:22:34
+Primary selected using:
+    <2022/09/28 15:22:34> vcluster-1: FGVM02TM22024344 is selected as the primary because its override priority is larger than peer member FGVM02TM22024345.
+    <2022/09/28 15:22:09> vcluster-1: FGVM02TM22024344 is selected as the primary because it's the only member in the cluster.
+ses_pickup: disable
+override: disable
+Configuration Status:
+    FGVM02TM22024344(updated 4 seconds ago): in-sync
+    FGVM02TM22024345(updated 5 seconds ago): in-sync
+System Usage stats:
+    FGVM02TM22024344(updated 4 seconds ago):
+        sessions=13, average-cpu-user/nice/system/idle=1%/0%/1%/98%, memory=54%
+    FGVM02TM22024345(updated 5 seconds ago):
+        sessions=1, average-cpu-user/nice/system/idle=1%/0%/0%/99%, memory=54%
+HBDEV stats:
+    FGVM02TM22024344(updated 4 seconds ago):
+        port5: physical/10000full, up, rx-bytes/packets/dropped/errors=3957576/11444/0/0, tx=100732051/73428/0/0
+    FGVM02TM22024345(updated 5 seconds ago):
+        port5: physical/10000full, up, rx-bytes/packets/dropped/errors=100731521/73479/0/0, tx=3948612/11359/0/0
+MONDEV stats:
+    FGVM02TM22024344(updated 4 seconds ago):
+    FGVM02TM22024345(updated 5 seconds ago):
+PINGSVR stats:
+    FGVM02TM22024344(updated 4 seconds ago):
+    FGVM02TM22024345(updated 5 seconds ago):
+Primary     : DC1             , FGVM02TM22024344, HA cluster index = 1
+Secondary   : DC2             , FGVM02TM22024345, HA cluster index = 0
+number of vcluster: 1
+vcluster 1: work 169.254.0.2
+Primary: FGVM02TM22024344, HA operating index = 0
+Secondary: FGVM02TM22024345, HA operating index = 1

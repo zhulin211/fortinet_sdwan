@@ -1,0 +1,145 @@
+==========================编辑=======================================================
+Device Manager --- Provisioning Templates --- BGP Template
+
+=================================================================================
+Hub1_BGP --- Edit
+
+==================================
+Neighbor Group --- VPN1 --- Edit
+
+IPv4 Filtering:
+
+ Route Map In --- enable --- [+]
+  Name: set_overlay_community
+  Rules --- Create New
+   ID:                       1
+   Action:                   Permit
+   Set Community --- enable: 11:22
+
+
+ Route Map Out --- enable --- [+]
+  Name: filter_mpls_community
+  Rules: --- Create New
+   --------------------------------------------------------
+   ID:                       1
+   Action:                   Deny
+     Match community --- enable --- community list --- [+]
+        Name: match_mpls_community
+        Type: Standard
+        Rules: --- Create New
+         ID:                       1
+         Action:                   Permit
+         Match:                    33:33
+   --------------------------------------------------------
+   ID:                       2
+   Action:                   Permit
+
+
+Advanced Options
+ additional-path:       both
+ adv-additional-path:   3
+=========================================
+Neighbor Group --- VPN2 --- Edit
+
+IPv4 Filtering:
+
+ Route Map In --- enable --- 选择: set_overlay_community
+
+ Route Map Out --- enable --- 选择: filter_mpls_community
+
+
+Advanced Options
+ additional-path:       both
+ adv-additional-path:   3
+=========================================
+Neighbor Group --- VPN3 --- Edit
+
+IPv4 Filtering:
+
+ Route Map In --- enable --- [+]
+  Name: set_mpls_community
+  Rules --- Create New
+   ID:                       1
+   Action:                   Permit
+   Set Community --- enable: 33:33
+
+
+ Route Map Out --- enable --- [+]
+  Name: filter_overlay_community
+  Rules: --- Create New
+
+   --------------------------------------------------------
+   ID:                       1
+   Action:                   Deny
+     Match community --- enable --- community list --- [+]
+        Name: match_overlay_community
+        Type: Standard
+        Rules: --- Create New
+         ID:                       1
+         Action:                   Permit
+         Match:                    11:22
+   --------------------------------------------------------
+   ID:                       2
+   Action:                   Permit
+   Set Community --- enable --- no-export
+
+
+Advanced Options
+ additional-path:       both
+ adv-additional-path:   3
+=================================================================================
+Neighbors --- 172.16.100.254 --- Edit
+
+IPv4 Filtering --- Prefix List Out --- enable --- [+]
+                                 Name:     filter_b1_b2_out
+                                 Rules --- Create New
+                                  ID:        1
+                                  Action:    Deny
+                                  Prefix --- Specify: 10.1.1.0/255.255.255.0
+
+                                  ID:        2
+                                  Action:    Deny
+                                  Prefix --- Specify: 10.1.2.0/255.255.255.0
+
+                                  ID:        3
+                                  Action:    Permit
+                                  Prefix --- Any
+
+
+====================================================================================
+Provisioning Templates --- CLI Templates --- CLI Template ---- H2S_HUB1_CLI ---Edit
+
+
+Script Details:
+
+config system interface
+edit "HUB1-Lo"
+set vdom "root"
+set ip 10.1.100.253 255.255.255.255
+set allowaccess ping
+set type loopback
+next
+end
+
+~~~~~~上面的默认的, 下面的添加的产生汇总路由的配置~~~~ [注意: 汇总路由也解决了Branch去往Hub环回口10.1.100.253的路由, 这个地址未来SLA会用到]
+
+
+config router bgp
+config aggregate-address
+edit 1
+set prefix 10.1.0.0 255.255.0.0
+next
+end
+
+
+=======================部署=============================================
+Device Manager --- Device & Groups --- Managed FortiGated
+
+====================================================================
+DC1 (勾选) --- Install --- Install Wizard ---
+                          Install Policy Package & Device Settings (勾选)
+                                                   Policy Package: DC_FW_Policy
+                                                                   --- Next
+                                                                   --- Next
+                                                                   --- Install
+

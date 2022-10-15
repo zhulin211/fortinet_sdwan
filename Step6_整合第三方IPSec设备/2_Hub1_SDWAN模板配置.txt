@@ -1,0 +1,29 @@
+====================================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Hub1_SDWAN --- Edit
+
+====================================================================================
+Interface Members:
+            Create New: --- SD-WAN Zone
+            添加如下1个Zone:
+                  name: s2s
+
+            Create New: --- SD-WAN Member
+            为Zone添加成员接口:
+
+            Sequence Number:     8
+            Interface Member:    S2S_1
+            SD-WAN Zone:         s2s
+            Gateway IP:          0.0.0.0
+
+            Sequence Number:     9
+            Interface Member:    S2S_2
+            SD-WAN Zone:         s2s
+            Gateway IP:          0.0.0.0
+
+==========================================================================================================
+DC1 (勾选) --- Install --- Install Wizard ---
+                          Install Policy Package & Device Settings (勾选)
+                                                   Policy Package: DC_FW_Policy
+                                                                   --- Next
+                                                                   --- Next
+                                                                   --- Install

@@ -1,0 +1,21 @@
+config system interface
+    edit "port1"
+        set mode static
+        set ip 202.100.11.2 255.255.255.0
+end
+
+config router static
+    edit 1
+        set dst 0.0.0.0 0.0.0.0
+        set gateway 202.100.11.254
+        set device "port1"
+end
+
+config system global
+    set admintimeout 480
+    set hostname "DC2"
+    set timezone 55
+    set language english
+end
+
+execute ping 202.100.11.254

@@ -1,0 +1,58 @@
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Branch2_SDWAN --- Edit
+
+=======================================================================================
+
+Advanced Options:
+
+duplication-max-num: 3 (默认2)
+
+[官方解释]
+On the spoke, duplication-max-num is set to 3. This instructs FortiGate to forward up to three copies of the packet—the original packet plus two duplicates. Moreover, each copy is sent through a different member.
+
+
+Duplication --- Create New
+
+#----方案1---
+Source Address: sdwan_overlay
+Destination Address: all
+Source Interface: any
+Destination Interface: overlay
+Service: ALL
+
+Packet Duplication: Force
+
+[官方解释 Packet Duplication]
+On the spoke, packet-duplication is set to force, which instructs FortiGate to always duplicate packets.
+An alternative is to set packet-duplication to on-demand, which instructs FortiGate to duplicate packets based on the SLA status of the outgoing interface.
+
+#----方案2---
+Service ID: RIA_Telnet
+Packet Duplication: On Demand
+
+Advanced Options:
+sla-match-service: enable
+
+[官方解释 匹配Service]
+You can configure packet duplication rules to duplicate packets that match one or more SD-WAN rules.
+This enables you to have more granular control and flexibility over duplicated traffic,
+as well as reduce the configuration required. For example, you can leverage the application steering feature
+of SD-WAN rules to duplicate traffic based on the detected application,
+rather than using the fixed 5-tuple configuration on a duplication rule to identify the traffic.
+Similarly, you can leverage ISDB and route tags to identify the destination of the traffic to duplicate.
+--------------------------------------------------------------------------------------
+
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Hub1_SDWAN --- Edit
+
+=======================================================================================
+
+Duplication --- Create New
+
+Source Address: sdwan_overlay
+Destination Address: all
+Source Interface: overlay
+Destination Interface: any
+Service: ALL
+
+Packet Discard Duplication: enable [激活去重复]
+
+Packet Duplication: Disable [保持默认]

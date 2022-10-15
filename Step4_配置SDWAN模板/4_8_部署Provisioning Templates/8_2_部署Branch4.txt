@@ -1,0 +1,29 @@
+====================================================================
+为Branch4_FW_Policy添加访问Internet的NAT策略
+
+[Branch3 直接通过CSR路由器上网, Branch1位于MPLS此次试验不考虑上网]
+
+Policy Package --- Branch4_FW_Policy --- Firewall Policy --- Create New
+
+Name: internet-traffic
+Incomming Interface: lan
+Outgoing Interface: internet
+Action: Accept
+NAT: 勾
+     NAT
+IP Pool Configuration: internet traffic
+
+点击: OK
+
+注意: 需要调整此策略到首位
+
+====================================================================
+Device Manager --- Device & Groups --- Managed FortiGated
+
+====================================================================
+DC1 (勾选) --- Install --- Install Wizard ---
+                          Install Policy Package & Device Settings (勾选)
+                                                   Policy Package: Branch4_FW_Policy
+                                                                   --- Next
+                                                                   --- Next
+                                                                   --- Install

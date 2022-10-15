@@ -1,0 +1,21 @@
+config system interface
+    edit "port1"
+        set ip 202.100.100.1 255.255.255.0
+        set allowaccess ping https ssh
+end
+
+=======================================================================================
+Changing management IP will affect VM license status. If you continue, system will reboot to re-validate VM license.
+Do you want to continue? (y/n) y
+
+
+~~~~~系统重启~~~~~
+=======================================================================================
+config system route
+    edit 1
+        set dst 0.0.0.0 0.0.0.0
+        set gateway 202.100.100.254
+        set device "port1"
+end
+
+execute ping 202.100.100.254

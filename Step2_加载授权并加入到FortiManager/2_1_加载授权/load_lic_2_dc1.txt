@@ -1,0 +1,65 @@
+config log setting
+    set local-in-allow enable
+    set local-in-deny-unicast enable
+    set local-in-deny-broadcast enable
+    set local-out enable
+end
+
+config system ha
+    set group-name "QYT_HA"
+    set mode a-p
+    set password Cisc0123
+    set hbdev "port5" 0
+    set override disable
+    set priority 200
+end
+
+config router bgp
+    set as 65100
+    config neighbor
+        edit "172.16.100.254"
+            set capability-default-originate enable
+            set interface "port3"
+            set remote-as 254
+end
+
+end
+
+config firewall policy
+    edit 1
+        set name "Branch1_NAT_1"
+        set srcintf "port3"
+        set dstintf "port1"
+        set action accept
+        set srcaddr "all"
+        set dstaddr "all"
+        set schedule "always"
+        set service "ALL"
+        set logtraffic all
+        set nat enable
+    next
+    edit 2
+        set name "Branch1_NAT_2"
+        set srcintf "port3"
+        set dstintf "port2"
+        set action accept
+        set srcaddr "all"
+        set dstaddr "all"
+        set schedule "always"
+        set service "ALL"
+        set logtraffic all
+        set nat enable
+    next
+    edit 3
+        set name "permit-all"
+        set srcintf "any"
+        set dstintf "any"
+        set action accept
+        set srcaddr "all"
+        set dstaddr "all"
+        set schedule "always"
+        set service "ALL"
+        set logtraffic all
+        set comments "qytang permit all"
+    next
+end

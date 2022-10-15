@@ -1,0 +1,95 @@
+=============================================================================================
+Device Manager --- Provisioning Templates --- IPsec Tunnel Templates --- Hub1_IPsec --- Edit
+
+=============================================================================================
+Create New
+         Tunnel Name: S2S_1
+         Network
+               Routing:                         Manual
+               Remote Device:                   IP Address
+               Remote Gateway (IP Address):     202.100.50.1
+               Outgoing Interface:              $(internet_p1)
+               Network Overlay:                 enable
+               Network ID:                      4
+         Authentication
+                      Authentication Method:    Pre-Shared Key
+                      Pre-shared Key:           fortinet
+         Tunnel Interface Setup
+                              IP:               100.200.1.1
+                              Remote IP:        100.200.1.2/255.255.255.0
+         Phase2 Interface
+                        + Create New
+                                   Name:        S2S_1
+                                   Keep Alive:  enable
+                                   Key Life:    3600
+
+OK
+=================================================================================
+Create New
+         Tunnel Name: S2S_2
+         Network
+               Routing:                         Manual
+               Remote Device:                   IP Address
+               Remote Gateway (IP Address):     202.100.50.1
+               Outgoing Interface:              $(internet_p2)
+               Network Overlay:                 enable
+               Network ID:                      5
+         Authentication
+                      Authentication Method:    Pre-Shared Key
+                      Pre-shared Key:           fortinet
+         Tunnel Interface Setup
+                              IP:               100.200.2.1
+                              Remote IP:        100.200.2.2/255.255.255.0
+         Phase2 Interface
+                        + Create New
+                                   Name:        S2S_2
+                                   Keep Alive:  enable
+                                   Key Life:    3600
+
+Ok
+===========================================================================================================
+DC1 (勾选) --- Install --- Install Wizard ---
+                          Install Policy Package & Device Settings (勾选)
+                                                   Policy Package: DC_FW_Policy
+                                                                   --- Next
+                                                                   --- Next
+                                                                   --- Install
+==========================================================================================================
+
+-----------------------------------------------------------------------------------------------
+ Tunnel Interface IP Address 推下去可能不生效,需要到DC1上手动配置Tunnel Interface IP Address,配置如下
+-----------------------------------------------------------------------------------------------
+
+Device Manager --- Device & Groups --- Managed FortiGate --- DC1 --- Display Options --- Check All --- OK
+
+==========================================================================================================
+System --- Interface --- Tunnel
+
+S2S_1 --- Edit
+            Address
+                  Addressing Mode:      Manual
+                  IP/Netmask:           100.200.1.1/255.255.255.255
+                  Remote IP:            100.200.1.2/255.255.255.0
+
+S2S_2 --- Edit
+            Address
+                  Addressing Mode:      Manual
+                  IP/Netmask:           100.200.2.1/255.255.255.255
+                  Remote IP:            100.200.2.2/255.255.255.0
+
+
+==========================================================================================================
+
+DC1 (勾选) --- Install --- Install Wizard ---
+                          Install Policy Package & Device Settings (勾选)
+                                                   Policy Package: DC_FW_Policy
+                                                                   --- Next
+                                                                   --- Next
+                                                                   --- Install
+
+
+
+
+
+
+

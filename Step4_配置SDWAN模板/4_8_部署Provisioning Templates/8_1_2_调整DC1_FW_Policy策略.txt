@@ -1,0 +1,17 @@
+====================================================================
+Policy Package --- DC1_FW_Policy --- Firewall Policy --- Create New
+
+Name: all_internet_traffic
+Incomming Interface: all
+Outgoing Interface: internet
+Action: Accept
+NAT: 勾
+     NAT
+IP Pool Configuration: Use Outgoing Interface Address
+Change Note: branch1 nat
+
+点击: OK
+
+============================================
+注意:
+调整Branch1_NAT策略在permit_all之上

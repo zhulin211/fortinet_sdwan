@@ -1,0 +1,6 @@
+---------------------加载FortiGate授权---------------------
+通过HTTP访问并加载授权: DC1, DC2
+
+注意: Chrome的书签"HTTP管理"里边有"DC1 HTTP"和"DC2 HTTP"
+
+授权文件位置: C:\Users\Administrator\Desktop\Fortinet-SDWAN-License\FG-Lic（20220921-20221120）\

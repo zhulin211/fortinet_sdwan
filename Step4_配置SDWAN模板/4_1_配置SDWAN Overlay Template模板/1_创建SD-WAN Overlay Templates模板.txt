@@ -1,0 +1,68 @@
+====================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Overlay Templates --- Create New
+
+Create New SD-WAN Overlay Template
+Name: H2S
+
+OK
+
+====================================================================
+Select New Topology: Single Hub
+
+Advanced:
+        Loopback IP Address:   10.1.100.0/255.255.255.0
+        Overlay Network:       192.168.0.0/255.255.0.0
+        BGP-AS Number:         65100
+        Auto-Discover VPN:     enable
+
+Next
+====================================================================
+HUB
+   Standablone Hub :   DC1
+
+Branch
+      Devce Group Assignment: Spoke (创建一个spoke组)
+
+
+Next
+====================================================================
+HUB
+   Standalone HUB
+        WAN Underlay 1              [不勾]Private Link: $(internet_p1)
+        WAN Underlay 2              [不勾]Private Link: $(internet_p2)
+        WAN Underlay 3              [不勾]Private Link: $(mpls_port)
+
+
+   Network Advertisement            Connected
+
+
+Branch
+   Standalone HUB
+        WAN Underlay 1              [不勾]Private Link: $(internet_p1)
+        WAN Underlay 2              [不勾]Private Link: $(internet_p2)
+        WAN Underlay 3              [不勾]Private Link: $(mpls_port)
+
+
+   Network Advertisement            Connected
+
+Next
+
+====================================================================
+Add Overlay Objects to SD-WAN Template                         disable
+Add Overlay Interfaces and Zones                               disable
+Add Health Check Servers for Each HUB as Performance SLA       disable
+
+Next
+
+Finish
+====================================================================
+
+查看自动创建BGP和IPSec模板
+
+BGP Template:
+    H2S_HUB1_BGP
+    H2S_BRANCH_BGP
+
+IPSec Tunnel Template:
+    H2S_HUB1_IPsec
+    H2S_BRANCH_IPsec

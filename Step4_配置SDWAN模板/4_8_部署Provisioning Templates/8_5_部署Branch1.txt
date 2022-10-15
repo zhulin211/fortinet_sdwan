@@ -1,0 +1,10 @@
+====================================================================
+Device Manager --- Device & Groups --- Managed FortiGated
+
+====================================================================
+DC1 (勾选) --- Install --- Install Wizard ---
+                          Install Policy Package & Device Settings (勾选)
+                                                   Policy Package: Branch1_FW_Policy
+                                                                   --- Next
+                                                                   --- Next
+                                                                   --- Install

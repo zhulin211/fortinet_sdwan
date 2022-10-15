@@ -1,0 +1,25 @@
+=================================================================================
+Device Manager --- Provisioning Templates --- Template Groups
+
+=================================================================================
+H2S_BRANCH --- More --- Clone  --- 改名为: Branch3_Templates
+
+Provisioning Templates --- [Click here to edit]
+
+System Template:       All_Device_System
+IPsec Tunnel Template: Branch3_IPsec
+BGP Template:          Branch3_BGP
+SD-WAN Template:       Branch3_SDWAN
+CLI Template Group:    H2S_BRANCH_CLIGRP [保持默认]
+
+<OK>
+
+=================================================================================
+Branch3_Templates  --- Assign to Devices/Groups
+                                          Available Entries --- Branch3(勾选) --- > (Select)
+
+ok
+=================================================================================
+
+
+

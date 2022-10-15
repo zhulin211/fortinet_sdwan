@@ -1,0 +1,37 @@
+====================================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Create New
+
+====================================================================================
+Create New SD-WAN Template
+
+Name: Branch3_SDWAN
+
+SD-WAN Status: enable
+
+Interface Members:
+            Create New: --- SD-WAN Zone
+            添加如下两个Zone:
+
+                  name: internet
+                  name: overlay
+
+            Create New: --- SD-WAN Member
+            为Zone添加成员接口:
+
+            Sequence Number:     1
+            Interface Member:    $(internet_p1)
+            SD-WAN Zone:         internet
+            Gateway IP:          $(internet_p1_gw)
+
+            Sequence Number:     2
+            Interface Member:    HUB1-VPN1
+            SD-WAN Zone:         overlay
+            Gateway IP:          0.0.0.0
+
+            Sequence Number:     3
+            Interface Member:    HUB1-VPN2
+            SD-WAN Zone:         overlay
+            Gateway IP:          0.0.0.0
+
+====================================================================================
+ok

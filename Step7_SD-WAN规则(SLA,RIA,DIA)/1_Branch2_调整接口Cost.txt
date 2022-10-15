@@ -1,0 +1,10 @@
+====================================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Branch2_SDWAN --- Edit
+
+====================================================================================
+Interface Members:
+                HUB1-VPN1 --- Edit --- Cost --- 100   (调整开销值)
+                HUB1-VPN2 --- Edit --- Cost --- 100   (调整开销值)
+                HUB1-VPN2 --- Edit --- Cost --- 500   (调整开销值)
+
+<OK>

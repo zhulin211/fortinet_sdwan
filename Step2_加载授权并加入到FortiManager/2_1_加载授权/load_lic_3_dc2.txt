@@ -1,0 +1,9 @@
+config system ha
+    set group-name "QYT_HA"
+    set mode a-p
+    set password Cisc0123
+    set hbdev "port5" 0
+    set override disable
+    set priority 100
+end
+

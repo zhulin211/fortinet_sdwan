@@ -1,0 +1,155 @@
+
+------------------------------------------Branch1-------------------------------------------------
+==================================================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Branch1_SDWAN --- Edit
+
+====================================配置健康检查=====================================================
+Performance SLA --- Create New
+                             Name:                  HUB1_HC
+                             IP Version:            IPv4
+                             Probe Mode:            Active
+                             Protocol:              Ping
+                             Server:                10.1.100.253
+                             Participants:          Specify
+
+                                                    HUB1-VPN3
+
+
+                             Enable Probe Packets:  enable
+                             SLA Targets:   [+ Add Target]
+                               Target 1 (配置一个可以接受的阈值)
+                                      Latency Threshold:        200
+                                      Jitter Threshold:         10
+                                      Packet Loss Threshold:    1
+
+                             Advanced Options [如果不配置, 10.2部分的FortiView无法看到统计信息]
+                                            sla-fail-log-period:        10
+                                            sla-pass-log-period:        20
+
+<OK>
+
+
+
+------------------------------------------Branch2-------------------------------------------------
+==================================================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Branch2_SDWAN --- Edit
+
+====================================配置健康检查=====================================================
+Performance SLA --- Create New
+                             Name:                  HUB1_HC
+                             IP Version:            IPv4
+                             Probe Mode:            Active
+                             Protocol:              Ping
+                             Server:                10.1.100.253
+                             Participants:          Specify
+
+                                                    HUB1-VPN1
+                                                    HUB1-VPN2
+                                                    HUB1-VPN3
+
+
+                             Enable Probe Packets:  enable
+                             SLA Targets:   [+ Add Target]
+                               Target 1 (配置一个可以接受的阈值)
+                                      Latency Threshold:        200
+                                      Jitter Threshold:         10
+                                      Packet Loss Threshold:    1
+
+                             Advanced Options [如果不配置, 10.2部分的FortiView无法看到统计信息]
+                                            sla-fail-log-period:        10
+                                            sla-pass-log-period:        20
+
+<OK>
+
+
+------------------------------------------Branch3-------------------------------------------------
+==================================================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Branch3_SDWAN --- Edit
+
+====================================配置健康检查=====================================================
+Performance SLA --- Create New
+                             Name:                  HUB1_HC
+                             IP Version:            IPv4
+                             Probe Mode:            Active
+                             Protocol:              Ping
+                             Server:                10.1.100.253
+                             Participants:          Specify
+
+                                                    HUB1-VPN1
+                                                    HUB1-VPN2
+
+
+                             Enable Probe Packets:  enable
+                             SLA Targets:   [+ Add Target]
+                               Target 1 (配置一个可以接受的阈值)
+                                      Latency Threshold:        200
+                                      Jitter Threshold:         10
+                                      Packet Loss Threshold:    1
+
+                             Advanced Options [如果不配置, 10.2部分的FortiView无法看到统计信息]
+                                            sla-fail-log-period:        10
+                                            sla-pass-log-period:        20
+
+<OK>
+
+
+------------------------------------------Branch4-------------------------------------------------
+==================================================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Branch4_SDWAN --- Edit
+
+====================================配置健康检查=====================================================
+Performance SLA --- Create New
+                             Name:                  HUB1_HC
+                             IP Version:            IPv4
+                             Probe Mode:            Active
+                             Protocol:              Ping
+                             Server:                10.1.100.253
+                             Participants:          Specify
+
+                                                    HUB1-VPN1
+                                                    HUB1-VPN2
+
+
+                             Enable Probe Packets:  enable
+                             SLA Targets:   [+ Add Target]
+                               Target 1 (配置一个可以接受的阈值)
+                                      Latency Threshold:        200
+                                      Jitter Threshold:         10
+                                      Packet Loss Threshold:    1
+
+                             Advanced Options [如果不配置, 10.2部分的FortiView无法看到统计信息]
+                                            sla-fail-log-period:        10
+                                            sla-pass-log-period:        20
+
+<OK>
+
+
+--------------------------------------------Hub---------------------------------------------------
+==================================================================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates --- Hub1_SDWAN --- Edit
+
+====================================配置健康检查=====================================================
+Performance SLA --- Create New
+                             Name:                  China_DNS
+                             IP Version:            IPv4
+                             Probe Mode:            Active
+                             Protocol:              DNS
+                             Server:                114.114.114.114
+                             Participants:          Specify
+
+                                                    $(internet_p1)
+                                                    $(internet_p2)
+
+
+                             Enable Probe Packets:  enable
+                             SLA Targets:   [+ Add Target]
+                               Target 1 (配置一个可以接受的阈值)
+                                      Latency Threshold:        200
+                                      Jitter Threshold:         10
+                                      Packet Loss Threshold:    1
+
+                             Advanced Options [如果不配置, 10.2部分的FortiView无法看到统计信息]
+                                            sla-fail-log-period:        10
+                                            sla-pass-log-period:        20
+
+<OK>

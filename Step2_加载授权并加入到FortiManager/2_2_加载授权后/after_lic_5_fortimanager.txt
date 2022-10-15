@@ -1,0 +1,11 @@
+config system global
+    set hostname "FMG"
+    set timezone 55
+end
+
+config system admin setting
+    set idle_timeout 28800
+    set idle_timeout_gui 28800
+    set idle_timeout_api 28800
+    set webadmin_language english
+end
