@@ -2,7 +2,7 @@
 Policy Package --- DC1_FW_Policy --- Firewall Policy --- Create New
 
 Name: all_internet_traffic
-Incomming Interface: all
+Incoming Interface: all
 Outgoing Interface: internet
 Action: Accept
 NAT: 勾
@@ -14,4 +14,4 @@ Change Note: branch1 nat
 
 ============================================
 注意:
-调整Branch1_NAT策略在permit_all之上
+调整all_internet_traffic策略在permit_all之上

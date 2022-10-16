@@ -13,6 +13,7 @@ Policy Offload Level: Disable
 ====================================================================
 Policy Package --- DC_FW_Policy --- Firewall Policy --- Create New
 
+ID: 1
 Name: Branch1_NAT_1
 Incomming Interface: port3
 Outgoing Interface: port1
@@ -27,6 +28,7 @@ Change Note: branch1 nat
 ====================================================================
 Policy Package --- DC_FW_Policy --- Firewall Policy --- Create New
 
+ID: 2
 Name: Branch1_NAT_2
 Incomming Interface: port3
 Outgoing Interface: port2
@@ -41,6 +43,7 @@ Change Note: branch1 nat
 ====================================================================
 Policy Package --- DC_FW_Policy --- Firewall Policy --- Create New
 
+ID: 3
 Name: permit-all
 Action: Accept
 Change Note: qytang dc permit all

@@ -8,3 +8,18 @@ Name: permit-all      ---保留
 
 ====================================================================
 SDWAN Template部署的时候接口不能被其他策略调用
+
+
+#### 若部署时候提示: invalid port3 #### [进入DC1删除NAT策略,FortiManger重新获取DC1配置]
+
+1. 进入DC1 CLI配置删除NAT策略
+DC1 # config firewall policy
+DC1 (policy) # delete 1
+DC1 (policy) # delete 2
+DC1 (policy) # end
+
+2. 重新获取DC1配置
+Device Manager --- Device&Groups --- Managed FortiGate --- DC1(点击DC1)
+
+Dashboard --- Configuration and Installation --- Configuration ---Revision --- Total Revisions --- Revsion History --- Retrieve Config (重新获取配置)
+

@@ -4,13 +4,6 @@ config system interface
         set allowaccess ping https ssh
 end
 
-=======================================================================================
-Changing management IP will affect VM license status. If you continue, system will reboot to re-validate VM license.
-Do you want to continue? (y/n) y
-
-
-~~~~~系统重启~~~~~
-=======================================================================================
 config system route
     edit 1
         set dst 0.0.0.0 0.0.0.0
@@ -19,3 +12,6 @@ config system route
 end
 
 execute ping 202.100.100.254
+
+
+
