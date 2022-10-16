@@ -21,9 +21,3 @@ Interface Members:
             Gateway IP:          0.0.0.0
 
 ==========================================================================================================
-DC1 (勾选) --- Install --- Install Wizard ---
-                          Install Policy Package & Device Settings (勾选)
-                                                   Policy Package: DC_FW_Policy
-                                                                   --- Next
-                                                                   --- Next
-                                                                   --- Install

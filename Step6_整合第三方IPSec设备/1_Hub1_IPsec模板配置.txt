@@ -48,12 +48,12 @@ Create New
 
 Ok
 ===========================================================================================================
-DC1 (勾选) --- Install --- Install Wizard ---
-                          Install Policy Package & Device Settings (勾选)
-                                                   Policy Package: DC_FW_Policy
-                                                                   --- Next
-                                                                   --- Next
-                                                                   --- Install
+
+
+
+
+
+####注意####
 ==========================================================================================================
 
 -----------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ DC1 (勾选) --- Install --- Install Wizard ---
 Device Manager --- Device & Groups --- Managed FortiGate --- DC1 --- Display Options --- Check All --- OK
 
 ==========================================================================================================
-System --- Interface --- Tunnel
+System --- Interface --- SD-WAN Zone
 
 S2S_1 --- Edit
             Address
