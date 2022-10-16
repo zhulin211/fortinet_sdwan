@@ -9,7 +9,7 @@ SD-WAN Rules ---
                                Source Address ---- Click to select --- +(Create New) --- Firewall Address
                                                                                                         Name:           sdwan_overlay
                                                                                                         IP/Netmask:     10.1.0.0/255.255.0.0
-                                                                                                        Change Note:    a
+                                                                                                        Change Note:    sdwan_overlay
                           Destination:
                                     Source Address ---- Click to select --- all --- ok
                                     Protocol:       TCP
@@ -60,9 +60,9 @@ This instructs FortiGate to skip the FIB lookup
 
 ======================================================================================================================================================
 
-Branch4 (勾选) --- Install --- Install Wizard ---
+Branch2 (勾选) --- Install --- Install Wizard ---
                           Install Policy Package & Device Settings (勾选)
-                                                   Policy Package: Branch4_FW_Policy
+                                                   Policy Package: Branch2_FW_Policy
                                                                    --- Next
                                                                    --- Next
                                                                    --- Install

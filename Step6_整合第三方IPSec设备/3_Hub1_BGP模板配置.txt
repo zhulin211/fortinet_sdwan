@@ -20,3 +20,14 @@ Neighbors --- Create New
 
 =================================================================================
 <OK>
+
+=================================================================================
+DC1 (勾选) --- Install --- Install Wizard ---
+                          Install Policy Package & Device Settings (勾选)
+                                                   Policy Package: DC_FW_Policy
+                                                                   --- Next
+                                                                   --- Next
+                                                                   --- Install
+
+=================================================================================
+install完毕注意检查S2S_1和S2S_2的Tunnel IP Address

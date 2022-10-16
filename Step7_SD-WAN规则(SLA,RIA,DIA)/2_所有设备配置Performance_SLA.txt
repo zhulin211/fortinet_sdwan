@@ -22,7 +22,7 @@ Performance SLA --- Create New
                                       Jitter Threshold:         10
                                       Packet Loss Threshold:    1
 
-                             Advanced Options [如果不配置, 10.2部分的FortiView无法看到统计信息]
+                             Advanced Options [如果不配置, 8.2部分的FortiView无法看到统计信息]
                                             sla-fail-log-period:        10
                                             sla-pass-log-period:        20
 
@@ -55,7 +55,7 @@ Performance SLA --- Create New
                                       Jitter Threshold:         10
                                       Packet Loss Threshold:    1
 
-                             Advanced Options [如果不配置, 10.2部分的FortiView无法看到统计信息]
+                             Advanced Options [如果不配置, 8.2部分的FortiView无法看到统计信息]
                                             sla-fail-log-period:        10
                                             sla-pass-log-period:        20
 
@@ -86,7 +86,7 @@ Performance SLA --- Create New
                                       Jitter Threshold:         10
                                       Packet Loss Threshold:    1
 
-                             Advanced Options [如果不配置, 10.2部分的FortiView无法看到统计信息]
+                             Advanced Options [如果不配置, 8.2部分的FortiView无法看到统计信息]
                                             sla-fail-log-period:        10
                                             sla-pass-log-period:        20
 
@@ -117,7 +117,7 @@ Performance SLA --- Create New
                                       Jitter Threshold:         10
                                       Packet Loss Threshold:    1
 
-                             Advanced Options [如果不配置, 10.2部分的FortiView无法看到统计信息]
+                             Advanced Options [如果不配置, 8.2部分的FortiView无法看到统计信息]
                                             sla-fail-log-period:        10
                                             sla-pass-log-period:        20
 
@@ -148,7 +148,7 @@ Performance SLA --- Create New
                                       Jitter Threshold:         10
                                       Packet Loss Threshold:    1
 
-                             Advanced Options [如果不配置, 10.2部分的FortiView无法看到统计信息]
+                             Advanced Options [如果不配置, 8.2部分的FortiView无法看到统计信息]
                                             sla-fail-log-period:        10
                                             sla-pass-log-period:        20
 
