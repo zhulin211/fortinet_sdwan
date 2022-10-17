@@ -1,3 +1,9 @@
+========================查看路由前请清一下BGP========================
+fortigate: execute router clear bgp all
+vyos: reset ip bgp all
+ios: clear ip bgp *
+
+==================================================================
 DC1 # get router info routing-table all
 Codes: K - kernel, C - connected, S - static, R - RIP, B - BGP
        O - OSPF, IA - OSPF inter area

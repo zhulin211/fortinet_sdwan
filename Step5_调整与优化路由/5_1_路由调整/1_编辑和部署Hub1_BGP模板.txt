@@ -81,7 +81,6 @@ IPv4 Filtering:
    --------------------------------------------------------
    ID:                       2
    Action:                   Permit
-   Set Community --- enable --- no-export
 
 
 Advanced Options

@@ -12,7 +12,7 @@ Action: Accept
 NAT: 勾
      NAT
 IP Pool Configuration: Use Outgoing Interface Address
-
+Change Note: branch2 nat
 点击: OK
 
 注意: 需要调整此策略到首位

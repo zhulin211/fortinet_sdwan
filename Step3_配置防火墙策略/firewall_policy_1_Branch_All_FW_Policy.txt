@@ -11,7 +11,7 @@ Policy Offload Level: Disable
 点击: OK
 
 ====================================================================
-Policy Package --- Branch1_FW_Policy --- Firewall Policy --- Create New
+Policy Package --- Branch1_FW_Policy --- Firewall Policy --- Create New [第二层灰色底]
 
 Name: permit-all
 Action: Accept
@@ -20,7 +20,7 @@ Change Note: qytang branch permit all
 点击: OK
 
 ====================================================================
-选择Branch1_FW_Policy --- Policy Package --- Clone
+选择Branch1_FW_Policy --- Policy Package[最顶上那一排, 蓝色底] --- Clone
 
 产生 Branch2_FW_Policy, Branch3_FW_Policy, Branch4_FW_Policy
 

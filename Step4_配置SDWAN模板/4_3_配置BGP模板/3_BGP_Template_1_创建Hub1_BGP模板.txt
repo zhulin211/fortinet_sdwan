@@ -7,21 +7,10 @@ H2S_HUB1_BGP --- More --- Clone
 =================================================================================
 改名为: Hub1_BGP
 
-Neighbor Group
-
-VPN1 --- Edit
-         Interface: VPN1
-
-VPN2 --- Edit
-         Interface: VPN2
-
-VPN3 --- Edit
-         Interface: VPN3
-
 Neighbors --- Create New
               IP:         172.16.100.254
               Remote AS:  254
-              interface:  port3
+              interface:  enable --- port3
               Capability: Default Originate  [勾选] < 不是最后面的那个, 位于IPv4 Filtering段落>
 
               <OK>
@@ -33,10 +22,25 @@ Neighbors --- Create New
 
               <OK>
 
+Neighbor Group
+
+VPN1 --- Edit
+         Interface: VPN1  <源接口>
+
+VPN2 --- Edit
+         Interface: VPN2  <源接口>
+
+VPN3 --- Edit
+         Interface: VPN3  <源接口>
+
+
 Networks --- IP/Netmask
              192.168.0.0/255.255.192.0   --- 删除
              192.168.64.0/255.255.192.0  --- 删除
              192.168.128.0/255.255.192.0 --- 删除
+
+             添加:
+             10.1.100.253/255.255.255.255
 
 
 Best Path Selection[展开] --- EBGP multi path --- enable (激活)    #### Branch5的EBGP
