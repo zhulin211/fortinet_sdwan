@@ -1,6 +1,6 @@
 =============================配置之前测试(Hub_PC)=================================================
 
-使用MobaXterm测试202.100.100.254(ssh)和202.100.100.254(telnet)
+使用MobaXterm测试202.100.30.1(ssh)和202.100.30.1(telnet)
 
 Branch3_GW#show users
     Line       User       Host(s)              Idle       Location
@@ -75,7 +75,7 @@ DC1 (勾选) --- Install --- Install Wizard ---
 
 =============================配置之前测试(Hub_PC)=================================================
 
-使用MobaXterm测试202.100.100.254(ssh)和202.100.100.254(telnet)
+使用MobaXterm测试202.100.30.1(ssh)和202.100.30.1(telnet)
 
 Branch3_GW#show users
     Line       User       Host(s)              Idle       Location
