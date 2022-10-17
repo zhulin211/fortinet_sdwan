@@ -60,32 +60,22 @@ Ok
  Tunnel Interface IP Address 推下去可能不生效,需要到DC1上手动配置Tunnel Interface IP Address,配置如下
 -----------------------------------------------------------------------------------------------
 
-Device Manager --- Device & Groups --- Managed FortiGate --- DC1 --- Display Options --- Check All --- OK
+Device Manager --- Device & Groups --- Managed FortiGate --- DC1
 
 ==========================================================================================================
-System --- Interface --- SD-WAN Zone
+System --- Interface --- Tunnel
 
 S2S_1 --- Edit
-            Address
+            Address:
                   Addressing Mode:      Manual
                   IP/Netmask:           100.200.1.1/255.255.255.255
                   Remote IP:            100.200.1.2/255.255.255.0
 
 S2S_2 --- Edit
-            Address
+            Address:
                   Addressing Mode:      Manual
                   IP/Netmask:           100.200.2.1/255.255.255.255
                   Remote IP:            100.200.2.2/255.255.255.0
-
-
-==========================================================================================================
-
-DC1 (勾选) --- Install --- Install Wizard ---
-                          Install Policy Package & Device Settings (勾选)
-                                                   Policy Package: DC_FW_Policy
-                                                                   --- Next
-                                                                   --- Next
-                                                                   --- Install
 
 
 

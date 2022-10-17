@@ -12,7 +12,7 @@ On the spoke, duplication-max-num is set to 3. This instructs FortiGate to forwa
 
 Duplication --- Create New
 
-#----方案1---
+#----方案1--- [强制复制]
 Source Address: sdwan_overlay
 Destination Address: all
 Source Interface: any
@@ -25,7 +25,7 @@ Packet Duplication: Force
 On the spoke, packet-duplication is set to force, which instructs FortiGate to always duplicate packets.
 An alternative is to set packet-duplication to on-demand, which instructs FortiGate to duplicate packets based on the SLA status of the outgoing interface.
 
-#----方案2---
+#----方案2--- [基于服务+SLA, 按需复制]
 Service ID: RIA_Telnet
 Packet Duplication: On Demand
 

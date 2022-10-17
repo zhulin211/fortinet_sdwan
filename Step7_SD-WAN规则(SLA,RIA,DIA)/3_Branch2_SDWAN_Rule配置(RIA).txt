@@ -1,6 +1,19 @@
+=============================配置之前测试(Branch2)=================================================
+
+使用MobaXterm测试202.100.100.254(ssh)和202.100.100.254(telnet)
+
+vyos@vyos:~$ show users
+NAME     LINE         TIME         COMMENT
+vyos     ttyS0        Oct  6 01:47
+vyos     tty1         Sep 28 07:15
+vyos     pts/0        Oct 17 08:20 ([::ffff:202.100.20.1]:49583) ----- Telnet
+vyos     pts/1        Oct 17 08:20 (202.100.20.1) ----- SSH
+
+注意: 此时是DIA的
+
+===========================配置SD-WAN Rule========================================================
 Device Manager --- Provisioning Templates --- SD-WAN Templates Branch2_SDWAN --- Edit
 
-===========================配置SD-WAN Rule===========================================================================================================================
 SD-WAN Rules ---
             Create New
                           Name:         RIA_SSH
@@ -11,7 +24,7 @@ SD-WAN Rules ---
                                                                                                         IP/Netmask:     10.1.0.0/255.255.0.0
                                                                                                         Change Note:    sdwan_overlay
                           Destination:
-                                    Source Address ---- Click to select --- all --- ok
+                                    Address ---- Click to select --- all --- ok
                                     Protocol:       TCP
                                     Port Range:     22 - 22
 
@@ -32,7 +45,7 @@ SD-WAN Rules ---
 enabling the default setting in an SD-WAN rule. This instructs FortiGate to skip the best route check.
 You can also change the behavior described in 2 by enabling the gateway setting in an SD-WAN rule.
 This instructs FortiGate to skip the FIB lookup
---------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
             Create New
                           Name:         RIA_Telnet
                           IP Version:   IPv4
@@ -40,7 +53,7 @@ This instructs FortiGate to skip the FIB lookup
                                Source Address ---- Click to select --- sdwan_overlay --- ok
 
                           Destination:
-                                    Source Address ---- Click to select --- all --- ok
+                                    Address ---- Click to select --- all --- ok
                                     Protocol:       TCP
                                     Port Range:     23 - 23
 
@@ -68,4 +81,17 @@ Branch2 (勾选) --- Install --- Install Wizard ---
                                                                    --- Install
 
 
+
+=============================配置之后测试(Branch2)=================================================
+
+使用MobaXterm测试202.100.100.254(ssh)和202.100.100.254(telnet)
+
+vyos@vyos:~$ show users
+NAME     LINE         TIME         COMMENT
+vyos     ttyS0        Oct  6 01:47
+vyos     tty1         Sep 28 07:15
+vyos     pts/0        Oct 17 08:27 ([::ffff:202.100.12.1]:49585) ----- Telnet
+vyos     pts/1        Oct 17 08:27 (202.100.12.1) ----- SSH
+
+注意: 此时是RIA的
 

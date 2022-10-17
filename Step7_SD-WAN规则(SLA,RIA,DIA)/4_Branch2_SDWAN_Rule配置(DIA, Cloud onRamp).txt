@@ -1,0 +1,90 @@
+=============================配置之前测试(Hub1)=================================================
+
+使用MobaXterm测试202.100.100.254(ssh)和202.100.100.254(telnet)
+
+Branch3_GW#show users
+    Line       User       Host(s)              Idle       Location
+   1 vty 0     admin      idle                 00:00:16 202.100.50.1  ----- SSH
+*  2 vty 1     admin      idle                 00:00:00 202.100.50.1  ----- Telnet
+
+  Interface    User               Mode         Idle     Peer Address
+
+Branch3_GW#
+
+注意: 此时所有流量都被引入到云端(Cloud OnRamp)
+
+===========================配置SD-WAN Rule========================================================
+Device Manager --- Provisioning Templates --- SD-WAN Templates Hub1_SDWAN --- Edit
+
+SD-WAN Rules ---
+            Create New
+                          Name:         DIA_Telnet
+                          IP Version:   IPv4
+                          Source:
+                               Source Address ---- Click to select --- sdwan_overlay --- ok
+
+                          Destination:
+                                    Address ---- Click to select --- all --- ok
+                                    Protocol:       TCP
+                                    Port Range:     23 - 23
+
+                          Outgoing Interfaces:
+                                     Strategy:                  Maximize Bandwidth(SLA)
+                                     Interface Preference:      + (选择)
+                                                                $(internet_p1)
+                                                                $(internet_p2)
+
+                                     Required SLA Target:       China_DNS
+
+                          Advanced Options: [如下两个选项会忽略路由表, 强行做策略路由]
+                                     default --- enable
+                                     gateway --- enable
+
+
+----------------------------------------------------------------------------------------------------
+            Create New
+                          Name:         Cloud_OnRamp
+                          IP Version:   IPv4
+                          Source:
+                               Source Address ---- Click to select --- sdwan_overlay --- ok
+
+                          Destination:
+                                    Address ---- Click to select --- all --- ok
+                                    Protocol:       TCP
+                                    Port Range:     23 - 23
+
+                          Outgoing Interfaces:
+                                     Strategy:                  Maximize Bandwidth(SLA)
+                                     Interface Preference:      + (选择)
+                                                                S2S_1
+                                                                S2S_2
+
+                                     Required SLA Target: ---  + (选择) --- CloudOnRamp
+
+
+======================================================================================================================================================
+
+Branch2 (勾选) --- Install --- Install Wizard ---
+                          Install Policy Package & Device Settings (勾选)
+                                                   Policy Package: DC_FW_Policy
+                                                                   --- Next
+                                                                   --- Next
+                                                                   --- Install
+
+
+
+=============================配置之前测试(Hub1)=================================================
+
+使用MobaXterm测试202.100.100.254(ssh)和202.100.100.254(telnet)
+
+Branch3_GW#show users
+    Line       User       Host(s)              Idle       Location
+   1 vty 0     admin      idle                 00:00:08 202.100.50.1 ----- SSH    (Cloud OnRamp)
+*  2 vty 1     admin      idle                 00:00:00 202.100.11.1 ----- Telnet (DIA)
+
+  Interface    User               Mode         Idle     Peer Address
+
+Branch3_GW#
+
+
+
