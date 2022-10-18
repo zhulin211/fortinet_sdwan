@@ -3,12 +3,4 @@ System Setting --- System Information --- FortiAnalyzer Feature --- enable (激�
 
 Are you sure that you want to enable FortiAnalyzer feature? The device will restart.
 
-OK
-
-========================================================================================
-
-Log View --- Traffic
-
-可以在第二行(灰色), 右边数第二个图标(像一个表格), 选择More Columns, 把Device Name选择进来
-
-
+<OK>
