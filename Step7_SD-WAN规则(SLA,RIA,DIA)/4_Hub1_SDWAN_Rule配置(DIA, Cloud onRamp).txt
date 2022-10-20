@@ -62,7 +62,7 @@ SD-WAN Rules ---
                           Destination:
                                     Address ---- Click to select --- all --- ok
                                     Protocol:       TCP
-                                    Port Range:     23 - 23
+                                    Port Range:     22 - 22
 
                           Outgoing Interfaces:
                                      Strategy:                  Maximize Bandwidth(SLA)
